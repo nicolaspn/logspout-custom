@@ -6,18 +6,19 @@ on:
       - master
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Push Docker image to Docker Hub
-      runs-on: ubuntu-latest
-      steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-      - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
-        with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: ghcr.io
-          repository: ${{ GITHUB_REPOSITORY }}/logspout
-          tag_with_ref: true
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Push Docker image to Docker Hub
+        runs-on: ubuntu-latest
+        steps:
+        - name: Check out the repo
+          uses: actions/checkout@v2
+        - name: Push to GitHub Packages
+          uses: docker/build-push-action@v1
+          with:
+            username: ${{ github.actor }}
+            password: ${{ secrets.GITHUB_TOKEN }}
+            registry: ghcr.io
+            repository: ${{ GITHUB_REPOSITORY }}/logspout
+            tag_with_ref: true
