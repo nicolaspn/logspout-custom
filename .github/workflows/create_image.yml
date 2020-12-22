@@ -9,7 +9,7 @@ jobs:
       - uses: docker/build-push-action@v1
         with:
           username: ${{ github.repository_owner }}
-          password: ${{ github.token }}
+          password: ${{ secrets.GITPAT }}
           registry: ghcr.io
           repository: nicolaspn/logspout
           tag_with_ref: true
