@@ -17,5 +17,5 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITPAT }}
           registry: ghcr.io
-          repository: ${{ github.repository_owner }}/logspout
+          repository: ${{ github.repository }}/logspout
           tag_with_ref: true
