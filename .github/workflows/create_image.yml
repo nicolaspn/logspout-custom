@@ -1,22 +1,11 @@
-name: Publish Docker image
-
-on: workflow_dispatch
-
-
+name: A workflow for my Hello World file
+on: push
 jobs:
-  push_to_registry:
-    name: Push Docker image to GitHub Packages
+  build:
+    name: Hello world action
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-      - name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
+      - uses: actions/checkout@v1
+      - uses: ./action-a
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: nicolaspn/logspout-custom
-          tag_with_ref: true
-
-
+          MY_NAME: "Nico"
