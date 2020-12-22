@@ -8,6 +8,7 @@ on:
 
 jobs:
   register-github-packages:
+    name: Push Docker image to register
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
