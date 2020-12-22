@@ -2,7 +2,7 @@ name: Create image
 
 on:
   push:
-    branches: master
+    branches: main
 
 jobs:
   main:
