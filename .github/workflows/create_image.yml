@@ -16,7 +16,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: nicolaspn/logspout-custom/
+          repository: nicolaspn/logspout-custom
           tag_with_ref: true
 
 
