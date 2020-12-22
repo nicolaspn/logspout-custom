@@ -7,7 +7,7 @@ on:
   workflow_dispatch
 
 jobs:
-  build:
+  register-github-packages:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
